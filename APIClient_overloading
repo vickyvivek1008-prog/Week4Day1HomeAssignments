@@ -1,0 +1,40 @@
+package week4Day1Assigment;
+
+//Inside the APIClient class, define the sendRequest method with multiple overloaded versions. 
+
+public class APIClient 
+{
+
+	//- One version should accept one input argument: a String for the endpoint.
+	void sendRequest(String endpoint) 
+	{
+		System.out.println("end point is: "+endpoint);
+	}
+
+	//	 - Another version of the sendRequest method should accept three input arguments: a String for the endpoint, a String for the requestBody, 
+	//and a boolean parameter requestStatus to verify whether the request is successful.
+
+	void sendRequest(String endpoint,String requestStatus, boolean requestBody) 
+	{
+		System.out.println("Enpoint of api :"+endpoint+ " Request body of api :"+requestBody+" Request Status of api :"+requestStatus);
+	}
+
+	//	 - Create a main method to demonstrate the usage of the overloaded sendRequest method. 
+	//	 - Inside the main method, create an object of the APIClient class. 
+
+	public static void main(String[] args) 
+	{
+
+		APIClient api=new APIClient();
+		//		 - Call both versions of the sendRequest method on the APIClient object with different sets of input arguments to 
+		//		showcase method overloading.
+		api.sendRequest("amazon.in");
+		api.sendRequest("facebook.com", "create account", true);
+
+
+
+
+
+	}
+
+}
