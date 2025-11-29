@@ -1,0 +1,67 @@
+package week4Day1Assigment;
+
+public interface Payments 
+{
+	void cashOnDelivery() ;
+	void upiPayments() ;
+	void cardPayments() ;
+	void internetBanking() ;
+}
+
+package week4Day1Assigment;
+
+ abstract class CanaraBank implements Payments
+{
+	abstract void recordPaymentDetails(String paymentType, double amount);
+
+}
+package week4Day1Assigment;
+
+public class Amazon extends CanaraBank implements Payments
+{
+
+	@Override
+	public void cashOnDelivery() {
+		// TODO Auto-generated method stub
+		System.out.println("Cash on delivery option");
+	}
+
+	@Override
+	public void upiPayments() {
+		// TODO Auto-generated method stub
+		System.out.println("UPI payment details option");
+	}
+
+	@Override
+	public void cardPayments() {
+		// TODO Auto-generated method stub
+		System.out.println("Card payment option ");
+	}
+
+	@Override
+	public void internetBanking() {
+		// TODO Auto-generated method stub
+		System.out.println("Internet Banking payment option");
+	}
+	@Override
+	void recordPaymentDetails(String paymentType, double amount) {
+		// TODO Auto-generated method stub
+		System.out.println("payment details : "+paymentType+" Amount :"+amount);
+		
+	}
+
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Amazon amazonOptions=new Amazon();
+		amazonOptions.cardPayments();
+		amazonOptions.cashOnDelivery();
+		amazonOptions.internetBanking();
+		amazonOptions.upiPayments();
+		amazonOptions.recordPaymentDetails("Upi Payment ", 500);
+
+	}
+
+	
+}
