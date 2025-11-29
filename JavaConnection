@@ -1,0 +1,32 @@
+package week4Day1Assigment;
+
+public class JavaConnection implements DatabaseConnection
+{
+
+	@Override
+	public void connect() {
+		
+		System.out.println("connect to data base ");
+	}
+
+	@Override
+	public void disconnect() {
+		
+		System.out.println("Disconnect to data base");
+	}
+
+	@Override
+	public void executeUpdate() 
+	{
+		System.out.println("Execute update statement in database");
+	}
+	
+	public static void main(String[] args) 
+	{
+		JavaConnection connection=new JavaConnection();
+		connection.connect();
+		connection.executeUpdate();
+		connection.disconnect();
+	}
+
+}
